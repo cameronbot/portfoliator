@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310015256) do
+ActiveRecord::Schema.define(:version => 20130310060124) do
+
+  create_table "holdings", :force => true do |t|
+    t.string   "ticker"
+    t.float    "total_cost"
+    t.float    "total_value"
+    t.float    "total_shares"
+    t.integer  "portfolio_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "holdings", ["portfolio_id"], :name => "index_holdings_on_portfolio_id"
 
   create_table "portfolios", :force => true do |t|
     t.string   "name"

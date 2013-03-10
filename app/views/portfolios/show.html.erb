@@ -1,1 +1,9 @@
 <h2><%= @portfolio.name %></h2>
+
+<ul>
+<% @holdings.each do |holding| %>
+  <li><%= holding.ticker %></li>
+<% end %>
+</ul>
+
+<p><%= link_to "Add holding", new_portfolio_holding_path(@portfolio) %></p>

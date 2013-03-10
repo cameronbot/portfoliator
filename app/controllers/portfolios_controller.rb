@@ -21,6 +21,7 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    @holdings = @portfolio.holdings.all
   end
 
 private
