@@ -1,0 +1,9 @@
+<h2>Portfolios</h2>
+
+<ul>
+<%= @portfolios.each do |portfolio| %>
+  <li><%= link_to portfolio.name, portfolios_path(portfolio) %></li>
+<% end %>
+</ul>
+
+<p><%= link_to "New Portfolio", new_portfolio_path %></p>
