@@ -1,0 +1,20 @@
+<%= form_for [@portfolio, @holding, @transaction], :html => { :class => "form-inline" } do |f| %>
+<%= f.error_messages %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ticker</th><th>Cost</th><th>Shares</th><th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @holding.ticker %></td>
+      <td><%= f.text_field :cost, :class => "span1" %></td>
+      <td><%= f.text_field :shares, :class => "span1" %></td>
+      <td><%= f.text_field :date, :class => "span2" %></td>
+      <td><%= f.submit %></td>
+    </tr>
+  </tbody>
+</table>
+<% end %>

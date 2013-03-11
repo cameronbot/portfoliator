@@ -1,9 +1,23 @@
 <h2><%= @portfolio.name %></h2>
 
-<ul>
-<% @holdings.each do |holding| %>
-  <li><%= holding.ticker %></li>
-<% end %>
-</ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ticker</th><th>Value</th><th>Cost Basis</th><th>Shares</th>
+      <th>Transact</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @holdings.each do |holding| %>
+    <tr>
+      <td><%= holding.ticker %></td>
+      <td><%= holding.total_value %></td>
+      <td><%= holding.total_cost %></td>
+      <td><%= holding.total_shares %></td>
+      <td><%= link_to "Add", new_portfolio_holding_transaction_path(@portfolio, holding) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 
 <p><%= link_to "Add holding", new_portfolio_holding_path(@portfolio) %></p>

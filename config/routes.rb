@@ -2,7 +2,9 @@ Portfoliator::Application.routes.draw do
   root :to => "portfolios#index"
 
   resources :portfolios do
-    resources :holdings
+    resources :holdings do
+      resources :transactions
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

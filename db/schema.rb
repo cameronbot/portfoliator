@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310060124) do
+ActiveRecord::Schema.define(:version => 20130310064408) do
 
   create_table "holdings", :force => true do |t|
     t.string   "ticker"
@@ -30,5 +30,16 @@ ActiveRecord::Schema.define(:version => 20130310060124) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "transactions", :force => true do |t|
+    t.datetime "date"
+    t.float    "cost"
+    t.float    "shares"
+    t.integer  "holding_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "transactions", ["holding_id"], :name => "index_transactions_on_holding_id"
 
 end
