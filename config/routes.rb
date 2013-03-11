@@ -5,6 +5,8 @@ Portfoliator::Application.routes.draw do
     resources :holdings do
       resources :transactions
     end
+
+    get :update_prices
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

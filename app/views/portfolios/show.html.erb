@@ -11,8 +11,8 @@
   <% @holdings.each do |holding| %>
     <tr>
       <td><%= holding.ticker %></td>
-      <td><%= holding.total_value %></td>
-      <td><%= holding.total_cost %></td>
+      <td><%= number_to_currency holding.total_value %></td>
+      <td><%= number_to_currency holding.total_cost %></td>
       <td><%= holding.total_shares %></td>
       <td><%= link_to "Add", new_portfolio_holding_transaction_path(@portfolio, holding) %></td>
     </tr>
@@ -20,4 +20,4 @@
   </tbody>
 </table>
 
-<p><%= link_to "Add holding", new_portfolio_holding_path(@portfolio) %></p>
+<p><%= link_to "Add holding", new_portfolio_holding_path(@portfolio), :class => "btn" %> <%= link_to "Update prices", portfolio_update_prices_path(@portfolio), :class => "btn btn-link" %> <i>Last updated: <%= @portfolio.price_updated %></p>
