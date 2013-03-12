@@ -20,4 +20,4 @@
   </tbody>
 </table>
 
-<p><%= link_to "Add holding", new_portfolio_holding_path(@portfolio), :class => "btn" %> <%= link_to "Update prices", portfolio_update_prices_path(@portfolio), :class => "btn btn-link" %> <i>Last updated: <%= @portfolio.price_updated %></p>
+<p><%= link_to "Add holding", new_portfolio_holding_path(@portfolio), :class => "btn" %> <%= link_to "Update prices", portfolio_update_holdings_path(@portfolio), :class => "btn btn-link" %> <i>Last updated: <%= @portfolio.price_updated %></p>

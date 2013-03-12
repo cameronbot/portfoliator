@@ -5,9 +5,12 @@ Portfoliator::Application.routes.draw do
     resources :holdings do
       resources :transactions
     end
-
-    get :update_prices
+    get :update_holdings
   end
+
+  #match '/portfolios/:id/update_holdings', :controller => 'portfolios', :action => 'update_holdings'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
